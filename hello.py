@@ -10,7 +10,7 @@ def say_three(line1,line2,line3):
   lines = [line1, line2, line3]
   spaces = ['  ', ' ', '']
 
-  for i in range(len(lines))
+  for i in range(len(lines)):
     os.system("echo [%s] %s >> history.log" % (timestamp, lines[i]))
     os.system("tail -n1 history.log")
     os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i+1,spaces[i],lines[i]))
@@ -26,7 +26,7 @@ def say_two(line1,line2):
   say_three(line1,line2,'')
 
 @app.route('/say/<line1>')
-def say_one(line1,line2):
+def say_one(line1):
   say_three(line1,'','')
 
 if __name__ == "__main__":
