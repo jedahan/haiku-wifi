@@ -4,9 +4,8 @@ app = Flask(__name__)
 import os
 import datetime
 
-@app.route('/test', methods=['GET', 'POST'])
-def print_args:
-  return request.args + request.args.get('val','')
+# Set this offset to the first radio you want to override
+radio_offset = 1
 
 @app.route('/say', methods=['GET', 'POST'])
 def say_three(line1,line2,line3):
@@ -20,7 +19,7 @@ def say_three(line1,line2,line3):
   for i in range(len(lines)):
     os.system("echo [%s] %s >> history.log" % (timestamp, lines[i]))
     os.system("tail -n1 history.log")
-    os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i+1,spaces[i],lines[i]))
+    os.system("uci set wireless.@wifi-iface[%d].ssid='-%d %s'" % (i+radio_offset,i,lines[i]))
 
   os.system("uci commit wireless")
   os.system("ifup wan")
