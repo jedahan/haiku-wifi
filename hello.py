@@ -4,10 +4,20 @@ app = Flask(__name__)
 import os
 import datetime
 
-@app.route('/say/<line1>/<line2>/<line3>')
+@app.route('/test', methods=['GET', 'POST'])
+def print_args:
+  return request.args + request.args.get('val','')
+
+@app.route('/say', methods=['GET', 'POST'])
 def say_three(line1,line2,line3):
   timestamp = datetime.datetime.now().strftime("%y/%m/%d %H:%M")
-  lines = [line1, line2, line3]
+  if request.method == 'POST':
+    lines = [request.form['line1'], request.form['line2'], request.form['line3']]
+  else:
+    lines << request.args.get('line1', '')
+    lines << request.args.get('line2', '')
+    lines << request.args.get('line3', '')
+    puts lines
   spaces = ['  ', ' ', '']
 
   for i in range(len(lines)):
