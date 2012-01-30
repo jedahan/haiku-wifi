@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 import os
@@ -14,10 +14,7 @@ def say_three(line1,line2,line3):
   if request.method == 'POST':
     lines = [request.form['line1'], request.form['line2'], request.form['line3']]
   else:
-    lines << request.args.get('line1', '')
-    lines << request.args.get('line2', '')
-    lines << request.args.get('line3', '')
-    puts lines
+    lines = [request.args.get('line1', ''), request.args.get('line2', ''), request.args.get('line3', '')]
   spaces = ['  ', ' ', '']
 
   for i in range(len(lines)):
