@@ -27,13 +27,5 @@ def say_three(line1,line2,line3):
 
   return "At %s, you said %s, %s, %s" % (timestamp, lines[1], lines[2], lines[3])
 
-@app.route('/say/<line1>/<line2>')
-def say_two(line1,line2):
-  say_three(line1,line2,'')
-
-@app.route('/say/<line1>')
-def say_one(line1):
-  say_three(line1,'','')
-
 if __name__ == "__main__":
   app.run(port=8888,host='0.0.0.0',debug=True)
