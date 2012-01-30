@@ -4,6 +4,11 @@ Created at the 2012 [arthackday](http://arthackday.net) by [Toby Schachman](http
 
 Some [pics](http://www.flickr.com/photos/37234044@N07/sets/72157629094958315/) of people enjoying the poetry.
 
+![after connecting and trying to browse the web](http://www.flickr.com/photos/42137335@N07/6787066535/in/set-72157629093151189)
+![after submitting a haiku](http://www.flickr.com/photos/42137335@N07/6787066671/)
+![what everyone sees](http://www.flickr.com/photos/42137335@N07/6787066399/)
+![iphones need more space](http://www.flickr.com/photos/42137335@N07/6787196159/)
+
 
 Install
 -------
