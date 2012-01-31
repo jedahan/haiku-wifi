@@ -65,8 +65,8 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-4 --- ☁ haiku wifi ☁ ---'
-    
-    Note that the web app is expecting to reconfigure `wifi-iface` 0-2, so if you don't have these placeholders as the first `wifi-iface`s, change the code in the web app.
+
+    Note that the web app is expecting to reconfigure `wifi-iface` 0-2, so if you don't have these placeholders as the first `wifi-iface`s, change the `radio_offset` variable in the web app.
 
 6. Make LuCI (the default web admin tool for Open-WRT) start up on port 81. In `/etc/config/uhttpd`, change this line
 
