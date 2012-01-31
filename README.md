@@ -44,21 +44,21 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-1 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-2 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-3 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
@@ -71,9 +71,9 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
 6. Make LuCI (the default web admin tool for Open-WRT) start up on port 81. In `/etc/config/uhttpd`, change this line
 
         list listen_http	0.0.0.0:80
-    
+
     to
-    
+
         list listen_http	0.0.0.0:81
 
 7. Put the web app--this repository--on your router in `/root/arthackday`. (`git clone` it and then `scp` it to the router.)
@@ -83,7 +83,7 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
         cp init.d/haiku /etc/init.d/haiku
 
     and enable it by running
-    
+
         /etc/init.d/haiku-wifi enable
 
 9. Configure dnsmasq to point all domains at 192.168.1.1. Append these lines to `/etc/dnsmasq.conf`:
