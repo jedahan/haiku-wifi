@@ -78,24 +78,9 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
 
 7. Put the web app--this repository--on your router in `/root/arthackday`. (`git clone` it and then `scp` it to the router.)
 
-8. Make an init.d script to run the python web app when the router starts up. Make this file `/etc/init.d/haiku`,
+8. Install the initscript to run the python web app when the router starts up:
 
-        #!/bin/sh /etc/rc.common
-        # Example script
-        # Copyright (C) 2007 OpenWrt.org
-        
-        START=99
-        STOP=15
-        
-        start() {
-                echo start
-                cd /root/arthackday
-                python haiku.py &
-        }
-        
-        stop() {
-                echo stop
-        }
+        cp init.d/haiku /etc/init.d/haiku
 
     and enable it by running
     
