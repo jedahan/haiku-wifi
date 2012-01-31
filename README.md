@@ -10,7 +10,7 @@ look for wireless networks to see the current haiku. connect to the haiku networ
 
 ## credits
 
-haiku wifi was created by jonathan dehan and toby schachman at [art hack day 2012](http://arthackday.net) at [319 scholes](http://319scholes.org/).
+haiku wifi was created by jonathan dahan and toby schachman at [art hack day 2012](http://arthackday.net) at [319 scholes](http://319scholes.org/).
 
 special thanks to sean mcintyre for lending us a router and tons of assistance with configuration. thanks also to jonathan kiritharan for assistance and josh keay for design ideas.
 
