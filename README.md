@@ -4,13 +4,13 @@ haiku wifi is a neighborhood bulletin board, hosted on a router, living in the w
 
 look for wireless networks to see the current haiku. connect to the haiku network to write a new haiku.
 
-![screenshot](http://farm8.staticflickr.com/7020/6787066399_a7cc887538_o.png)
+![screenshot](http://farm8.staticflickr.com/7148/6793325161_714bdb4849_o.png)
 
 [More screenshots](http://www.flickr.com/photos/42137335@N07/sets/72157629093151189/) and [people writing poetry](http://www.flickr.com/photos/37234044@N07/sets/72157629094958315/)
 
 ## credits
 
-haiku wifi was created by jonathan dehan and toby schachman at [arthackday 2012](http://arthackday.net) at [319 scholes](http://319scholes.org/).
+haiku wifi was created by jonathan dehan and toby schachman at [art hack day 2012](http://arthackday.net) at [319 scholes](http://319scholes.org/).
 
 special thanks to sean mcintyre for lending us a router and tons of assistance with configuration. thanks also to jonathan kiritharan for assistance and josh keay for design ideas.
 
