@@ -12,7 +12,6 @@ def say():
   else:
     lines = [ request.args.get('line1', ''), request.args.get('line2', ''), request.args.get('line3', '') ]
 
-  print lines
   prefix = ['-1', '-2', '-3']
 
   for i in range(len(lines)):
@@ -35,6 +34,6 @@ def home():
 @app.route('/<path:path>')
 def catch_all(path):
   return redirect("/static/index.html")
-  
+
 if __name__ == "__main__":
-  app.run(port=80,host='0.0.0.0',debug=True)
+  app.run(port=80,host='0.0.0.0')
