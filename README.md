@@ -44,61 +44,46 @@ Finally, we changed the default admin interface to run on port 81 (instead of 80
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-1 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-2 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-3 ...'
-        
+
         config 'wifi-iface'
           option 'device' 'radio0'
           option 'mode' 'ap'
           option 'encryption' 'none'
           option 'network' 'lan'
           option 'ssid' '-4 --- ☁ haiku wifi ☁ ---'
-    
-    Note that the web app is expecting to reconfigure `wifi-iface` 0-2, so if you don't have these placeholders as the first `wifi-iface`s, change the code in the web app.
+
+    Note that the web app is expecting to reconfigure `wifi-iface` 0-2, so if you don't have these placeholders as the first `wifi-iface`s, change the `radio_offset` variable in the web app.
 
 6. Make LuCI (the default web admin tool for Open-WRT) start up on port 81. In `/etc/config/uhttpd`, change this line
 
         list listen_http	0.0.0.0:80
-    
+
     to
-    
+
         list listen_http	0.0.0.0:81
 
 7. Put the web app--this repository--on your router in `/root/arthackday`. (`git clone` it and then `scp` it to the router.)
 
-8. Make an init.d script to run the python web app when the router starts up. Make this file `/etc/init.d/haiku`,
+8. Install the initscript to run the python web app when the router starts up:
 
-        #!/bin/sh /etc/rc.common
-        # Example script
-        # Copyright (C) 2007 OpenWrt.org
-        
-        START=99
-        STOP=15
-        
-        start() {
-                echo start
-                cd /root/arthackday
-                python haiku.py &
-        }
-        
-        stop() {
-                echo stop
-        }
+        cp init.d/haiku /etc/init.d/haiku
 
     and enable it by running
-    
+
         /etc/init.d/haiku-wifi enable
 
 9. Configure dnsmasq to point all domains at 192.168.1.1. Append these lines to `/etc/dnsmasq.conf`:

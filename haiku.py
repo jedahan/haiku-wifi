@@ -12,20 +12,18 @@ def say():
   else:
     lines = [ request.args.get('line1', ''), request.args.get('line2', ''), request.args.get('line3', '') ]
 
-  print lines
-  spaces = ['-1', '-2', '-3']
-                              
+  prefix = ['-1', '-2', '-3']
+
   for i in range(len(lines)):
     lines[i] = lines[i].replace("'", "")
     os.system("echo [%s] %s >> history.log" % (timestamp, lines[i]))
     os.system("tail -n1 history.log")
-    os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i,spaces[i],lines[i]))
+    os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i,prefix[i],lines[i]))
   os.system("uci commit wireless")
   os.system("ifup wan")
   os.system("wifi")
-                              
-  return 'success'                               
 
+  return 'success'
 
 @app.route('/')
 def home():
@@ -35,6 +33,6 @@ def home():
 @app.route('/<path:path>')
 def catch_all(path):
   return redirect("/static/index.html")
-  
+
 if __name__ == "__main__":
-  app.run(port=80,host='0.0.0.0',debug=True)
+  app.run(port=80,host='0.0.0.0')
