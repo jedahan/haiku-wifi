@@ -22,9 +22,8 @@ def say():
   os.system("uci commit wireless")
   os.system("ifup wan")
   os.system("wifi")
-                              
-  return 'success'                               
 
+  return 'success'
 
 @app.route('/')
 def home():
