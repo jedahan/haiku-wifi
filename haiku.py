@@ -13,13 +13,13 @@ def say():
     lines = [ request.args.get('line1', ''), request.args.get('line2', ''), request.args.get('line3', '') ]
 
   print lines
-  spaces = ['-1', '-2', '-3']
-                              
+  prefix = ['-1', '-2', '-3']
+
   for i in range(len(lines)):
     lines[i] = lines[i].replace("'", "")
     os.system("echo [%s] %s >> history.log" % (timestamp, lines[i]))
     os.system("tail -n1 history.log")
-    os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i,spaces[i],lines[i]))
+    os.system("uci set wireless.@wifi-iface[%d].ssid='%s %s'" % (i,prefix[i],lines[i]))
   os.system("uci commit wireless")
   os.system("ifup wan")
   os.system("wifi")
